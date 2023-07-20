@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: jwt-token-spring-security
+  jpa:
+
+    hibernate:
+      # New database is created when application started
+      ddl-auto: update
+    # Show sql when spring data jpa performs query
+    show-sql: true
+    database-platform:
+    dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+
+  datasource:
+    # URL connection to database (employee is database name)
+    url: jdbc:mysql://localhost:3306/employee
+    username: root
+    password: root
+server:
+  port: 8666
+
+token:
+  signing:
+    key: eyJhbGciOiJIUzI1NiJ9eyJSb2xlIjoiVXNlciIsIklzc3VlciI6InNla2hhciIsIlVzZXJuYW1lIjoic2VraGFyIiwiZXhwIjoxNjg5NjE2NzIwLCJpYXQiOjE2ODk2MTY3MTl90F76odUxxG0943nsWMiKLM34LW777cfmz8pxGbTHsYM
+
+  #GitHub Login through oAuth2 Access Authentication
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: 4a5d6fd6e6d0510d8692
+            clientSecret: c60f07d70cfe56c05aeab86593c7737e879d3959
